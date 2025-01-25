@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autenticación y Restablecimiento de Contraseña</title>
+    <!-- Materialize CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- SweetAlert CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Autenticación previa -->
+    <div class="container z-depth-3" id="authFormContainer">
+        <h4>Autenticación</h4>
+        <form id="authForm">
+            <div class="input-field">
+                <input type="text" id="username" class="validate" required>
+                <label for="username">Usuario o Correo Electrónico</label>
+            </div>
+            <button type="button" class="btn waves-effect waves-light blue lighten-1" id="authSubmit" style="width: 100%;">Verificar Usuario</button>
+        </form>
+    </div>
+
+    <!-- Código de confirmación -->
+    <div class="container z-depth-3 hidden" id="codeFormContainer">
+        <h4>Código de Confirmación</h4>
+        <form id="codeForm">
+            <div class="input-field">
+                <input type="text" id="confirmationCode" class="validate" required>
+                <label for="confirmationCode">Ingrese el Código</label>
+            </div>
+            <button type="button" class="btn waves-effect waves-light blue lighten-1" id="codeSubmit" style="width: 100%;">Verificar Código</button>
+        </form>
+    </div>
+
+    <!-- Formulario de restablecimiento de contraseña -->
+    <div class="container z-depth-3 hidden" id="resetPasswordFormContainer">
+        <h4>Restablecer Contraseña</h4>
+        <form id="resetPasswordForm">
+            <div class="input-field">
+                <input type="password" id="password" class="validate" required>
+                <label for="password">Nueva Contraseña</label>
+                <span class="toggle-password" data-target="#password"><i class="fa fa-eye"></i></span>
+            </div>
+            <div class="input-field">
+                <input type="password" id="confirmPassword" class="validate" required>
+                <label for="confirmPassword">Confirmar Contraseña</label>
+                <span class="toggle-password" data-target="#confirmPassword"><i class="fa fa-eye"></i></span>
+            </div>
+            <div class="policy" id="policy-length">✔ Mínimo 8 caracteres</div>
+            <div class="policy" id="policy-uppercase">✔ Al menos una letra mayúscula</div>
+            <div class="policy" id="policy-number">✔ Al menos un número</div>
+            <div class="policy" id="policy-symbol">✔ Al menos un símbolo (+, -, @, *)</div>
+            <button type="button" class="btn waves-effect waves-light blue lighten-1" id="resetSubmit" style="width: 100%; margin-top: 20px;">Restablecer Contraseña</button>
+        </form>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- SweetAlert JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Custom JS -->
+    <script src="scripts.js"></script>
+</body>
+</html>
